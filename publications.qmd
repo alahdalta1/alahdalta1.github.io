@@ -1,0 +1,87 @@
+---
+title: "Publications"
+pagetitle: "Publications — Tareq Al-Ahdal"
+page-layout: full
+---
+
+## First-author
+
+::: {.pub}
+[iScience]{.badge .iscience}
+
+::: {}
+### The association of climate-induced stressors on risk of negative sentiment: an analysis from 462 million geotagged tweets in Europe
+::: {.venue}
+iScience (Cell Press) · [2025]{.yr} · 28(12)
+:::
+::: {.tags}
+[R-INLA / BYM2]{.tag}
+[NLP]{.tag}
+[Spatiotemporal]{.tag}
+[462M tweets]{.tag}
+:::
+:::
+:::
+
+::: {.pub}
+[iScience]{.badge .iscience}
+
+::: {}
+### The impact of climatic factors on negative sentiments: an analysis of human expressions from X platform in Germany
+::: {.venue}
+iScience (Cell Press) · [2025]{.yr} · 28(3)
+:::
+::: {.tags}
+[R-INLA]{.tag}
+[Sentiment analysis]{.tag}
+[Germany]{.tag}
+:::
+:::
+:::
+
+::: {.pub}
+[Protocol]{.badge .other}
+
+::: {}
+### Protocol for analyzing spatiotemporal associations between climate-induced stressors and negative sentiment from geotagged social media data
+::: {.venue}
+STAR Protocols · [2026]{.yr}
+:::
+::: {.tags}
+[Reproducible workflow]{.tag}
+[R + Python]{.tag}
+:::
+:::
+:::
+
+## Co-authored
+
+::: {.pub}
+[Lancet]{.badge .lancet}
+
+::: {}
+### Climate change and pandemics: a call for action
+::: {.venue}
+The Lancet Planetary Health · [2025]{.yr}
+:::
+::: {.tags}
+[Climate–health]{.tag}
+:::
+:::
+:::
+
+::: {.pub}
+[Lancet]{.badge .lancet}
+
+::: {}
+### COVID-19 in Afghanistan — epidemiology and early response
+::: {.venue}
+The Lancet Global Health / Lancet Infectious Diseases
+:::
+::: {.tags}
+[Infectious disease]{.tag}
+[Surveillance]{.tag}
+:::
+:::
+:::
+

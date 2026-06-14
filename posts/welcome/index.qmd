@@ -1,0 +1,49 @@
+---
+title: "A reproducible analysis template I actually use"
+description: "Project structure, renv/uv, and a Makefile that runs the whole thing from raw data to manuscript figures."
+author: "Tareq Al-Ahdal"
+date: "2026-06-10"
+categories: [R, Python, Workflow]
+---
+
+Most analysis projects rot because nobody can re-run them six months later.
+Here's the skeleton I start every project with so that `make all` reproduces
+everything from raw data to the figures in the paper.
+
+## The layout
+
+```
+project/
+├── data/
+│   ├── raw/          # never edited by hand
+│   └── derived/      # everything here is regenerated
+├── R/                # functions, sourced not run top-to-bottom
+├── analysis/         # numbered scripts: 01_clean.R, 02_model.R ...
+├── figures/
+├── renv.lock         # pinned R dependencies
+├── Makefile
+└── README.md
+```
+
+## The rule that makes it work
+
+Raw data is read-only. Everything in `data/derived/` is produced by a script
+and can be deleted and rebuilt at any time. If you can't delete it and get it
+back, it doesn't belong there.
+
+## A tiny Makefile
+
+``` makefile
+all: figures/fig1.png
+
+data/derived/clean.rds: analysis/01_clean.R data/raw/source.csv
+	Rscript $<
+
+figures/fig1.png: analysis/02_model.R data/derived/clean.rds
+	Rscript $<
+```
+
+Make only re-runs what changed. Touch the cleaning script and just the
+downstream steps rebuild.
+
+

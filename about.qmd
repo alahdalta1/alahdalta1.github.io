@@ -1,0 +1,40 @@
+---
+title: "About"
+pagetitle: "About — Tareq Al-Ahdal"
+about:
+  template: trestles
+  image: images/profile.jpeg
+  image-shape: round
+  links:
+    - icon: github
+      text: GitHub
+      href: https://github.com/alahdalta1
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/tareq-al-ahdal-6515a4145/
+---
+
+I'm a doctoral researcher in Heidelberg working on climate–health
+epidemiology and spatial statistics. My methods sit mostly in Bayesian
+spatiotemporal modeling — R-INLA, BYM2, CAR priors — alongside causal
+inference (Mendelian randomization) and NLP on geotagged data.
+
+Before this I trained as a dentist and earned master's degrees in public
+health/epidemiology and in health informatics. I've published 32+ papers
+(10,000+ citations), including work in *The Lancet Planetary Health* and
+two first-author papers in *iScience* (Cell Press). These days I split my
+attention between academic research and real-world evidence / HEOR.
+
+## Research interests
+
+- Bayesian spatiotemporal modeling (R-INLA, BYM2, CAR)
+- Causal inference (Mendelian randomization, propensity scores, IPW, MSM)
+- NLP & sentiment analysis on large geotagged datasets
+- Real-world evidence & HEOR
+- Reproducible analysis pipelines
+
+## Tools
+
+R · Python · R-INLA · high-performance computing · reproducible workflows
+(renv / uv, Quarto, Make)
+

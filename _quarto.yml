@@ -1,0 +1,49 @@
+project:
+  type: website
+  output-dir: _site
+  render:
+    - "*.qmd"
+    - "posts/*/*.qmd"
+
+website:
+  title: "Tareq Al-Ahdal"
+  description: "Epidemiologist & Data Scientist — spatial epidemiology, Bayesian modeling, and health data science."
+  site-url: "https://alahdalta1.github.io"
+  favicon: images/logo.png
+  navbar:
+    background: primary
+    logo: images/logo.png
+    title: "Tareq Al-Ahdal"
+    left:
+      - text: "Home"
+        href: index.qmd
+      - text: "Publications"
+        href: publications.qmd
+      - text: "Projects"
+        href: projects.qmd
+      - text: "Blog"
+        href: blog.qmd
+      - text: "About"
+        href: about.qmd
+    right:
+      - icon: github
+        href: https://github.com/alahdalta1
+        aria-label: GitHub
+      - icon: linkedin
+        href: https://www.linkedin.com/in/tareq-al-ahdal-6515a4145/
+        aria-label: LinkedIn
+  page-footer:
+    background: light
+    left: "© 2026 Tareq Al-Ahdal"
+    right: "Built with [Quarto](https://quarto.org) · Published on GitHub Pages"
+
+format:
+  html:
+    theme: [cosmo, theme.scss]
+    css: styles.css
+    toc: false
+    code-copy: true
+    highlight-style: github
+    fontsize: 1.05em
+    grid:
+      body-width: 920px

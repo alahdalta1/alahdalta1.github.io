@@ -1,0 +1,30 @@
+---
+title: "Projects"
+pagetitle: "Projects — Tareq Al-Ahdal"
+page-layout: full
+---
+
+Code and reproducible pipelines. More on
+[GitHub](https://github.com/alahdalta1).
+
+::: {.projects}
+<a class="proj-card" href="https://github.com/alahdalta1/Germany_Climate_Sentiment_Paper" target="_blank" rel="noopener">
+<h3>Germany & Europe Climate–Sentiment</h3>
+<p>Reproducible R + Python pipeline for the STAR Protocols paper: tweet preprocessing, LIWC22 sentiment analysis, climate-variable extraction to NUTS regions, and spatiotemporal INLA (BYM/BYM2, fused-lasso temporal effects). Backs both iScience papers on Germany and Europe.</p>
+<div class="langs">
+<span class="lang"><span class="dot r"></span>R 82%</span>
+<span class="lang"><span class="dot jn"></span>Jupyter 11%</span>
+<span class="lang"><span class="dot py"></span>Python 7%</span>
+</div>
+</a>
+
+<a class="proj-card" href="https://github.com/alahdalta1" target="_blank" rel="noopener">
+<h3>More on GitHub →</h3>
+<p>Browse the rest of my repositories — analysis code, reproducible workflows, and teaching material in R and Python.</p>
+<div class="langs">
+<span class="lang"><span class="dot r"></span>R</span>
+<span class="lang"><span class="dot py"></span>Python</span>
+</div>
+</a>
+:::
+

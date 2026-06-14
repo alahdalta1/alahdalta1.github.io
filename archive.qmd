@@ -1,0 +1,13 @@
+---
+title: "Archive"
+listing:
+  contents: posts
+  type: table
+  sort: "date desc"
+  categories: true
+  fields: [date, title, categories]
+  table-hover: true
+page-layout: full
+---
+
+All posts, newest first.

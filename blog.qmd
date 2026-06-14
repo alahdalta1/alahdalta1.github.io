@@ -1,0 +1,17 @@
+---
+title: "Blog"
+pagetitle: "Blog — Tareq Al-Ahdal"
+page-layout: full
+listing:
+  contents: posts
+  type: default
+  sort: "date desc"
+  categories: true
+  sort-ui: false
+  filter-ui: false
+  fields: [date, title, description, categories]
+  feed: true
+---
+
+Notes and tutorials on spatial epidemiology, Bayesian modeling, and
+reproducible analysis — in R and Python.
