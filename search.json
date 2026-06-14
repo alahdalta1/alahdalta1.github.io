@@ -1,0 +1,121 @@
+[
+  {
+    "objectID": "publications.html",
+    "href": "publications.html",
+    "title": "Publications",
+    "section": "",
+    "text": "iScience\n\n\n\niScience (Cell Press) · 2025 · 28(12)\n\n\nR-INLA / BYM2 NLP Spatiotemporal 462M tweets\n\n\n\n\niScience\n\n\n\niScience (Cell Press) · 2025 · 28(3)\n\n\nR-INLA Sentiment analysis Germany\n\n\n\n\nProtocol\n\n\n\nSTAR Protocols · 2026\n\n\nReproducible workflow R + Python"
+  },
+  {
+    "objectID": "publications.html#first-author",
+    "href": "publications.html#first-author",
+    "title": "Publications",
+    "section": "",
+    "text": "iScience\n\n\n\niScience (Cell Press) · 2025 · 28(12)\n\n\nR-INLA / BYM2 NLP Spatiotemporal 462M tweets\n\n\n\n\niScience\n\n\n\niScience (Cell Press) · 2025 · 28(3)\n\n\nR-INLA Sentiment analysis Germany\n\n\n\n\nProtocol\n\n\n\nSTAR Protocols · 2026\n\n\nReproducible workflow R + Python"
+  },
+  {
+    "objectID": "publications.html#co-authored",
+    "href": "publications.html#co-authored",
+    "title": "Publications",
+    "section": "Co-authored",
+    "text": "Co-authored\n\nLancet\n\nClimate change and pandemics: a call for action\n\nThe Lancet Planetary Health · 2025\n\n\nClimate–health\n\n\n\n\nLancet\n\nCOVID-19 in Afghanistan — epidemiology and early response\n\nThe Lancet Global Health / Lancet Infectious Diseases\n\n\nInfectious disease Surveillance"
+  },
+  {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "A reproducible analysis template I actually use",
+    "section": "",
+    "text": "Most analysis projects rot because nobody can re-run them six months later. Here’s the skeleton I start every project with so that make all reproduces everything from raw data to the figures in the paper."
+  },
+  {
+    "objectID": "posts/welcome/index.html#the-layout",
+    "href": "posts/welcome/index.html#the-layout",
+    "title": "A reproducible analysis template I actually use",
+    "section": "The layout",
+    "text": "The layout\nproject/\n├── data/\n│   ├── raw/          # never edited by hand\n│   └── derived/      # everything here is regenerated\n├── R/                # functions, sourced not run top-to-bottom\n├── analysis/         # numbered scripts: 01_clean.R, 02_model.R ...\n├── figures/\n├── renv.lock         # pinned R dependencies\n├── Makefile\n└── README.md"
+  },
+  {
+    "objectID": "posts/welcome/index.html#the-rule-that-makes-it-work",
+    "href": "posts/welcome/index.html#the-rule-that-makes-it-work",
+    "title": "A reproducible analysis template I actually use",
+    "section": "The rule that makes it work",
+    "text": "The rule that makes it work\nRaw data is read-only. Everything in data/derived/ is produced by a script and can be deleted and rebuilt at any time. If you can’t delete it and get it back, it doesn’t belong there."
+  },
+  {
+    "objectID": "posts/welcome/index.html#a-tiny-makefile",
+    "href": "posts/welcome/index.html#a-tiny-makefile",
+    "title": "A reproducible analysis template I actually use",
+    "section": "A tiny Makefile",
+    "text": "A tiny Makefile\nall: figures/fig1.png\n\ndata/derived/clean.rds: analysis/01_clean.R data/raw/source.csv\n    Rscript $&lt;\n\nfigures/fig1.png: analysis/02_model.R data/derived/clean.rds\n    Rscript $&lt;\nMake only re-runs what changed. Touch the cleaning script and just the downstream steps rebuild."
+  },
+  {
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "Blog",
+    "section": "",
+    "text": "Notes and tutorials on spatial epidemiology, Bayesian modeling, and reproducible analysis — in R and Python.\n\n\n\n\n\n\n\n\n\nA reproducible analysis template I actually use\n\n\n\nR\n\nPython\n\nWorkflow\n\n\n\nProject structure, renv/uv, and a Makefile that runs the whole thing from raw data to manuscript figures.\n\n\n\n\n\nJun 10, 2026\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "I’m a doctoral researcher in Heidelberg working on climate–health epidemiology and spatial statistics. My methods sit mostly in Bayesian spatiotemporal modeling — R-INLA, BYM2, CAR priors — alongside causal inference (Mendelian randomization) and NLP on geotagged data.\nBefore this I trained as a dentist and earned master’s degrees in public health/epidemiology and in health informatics. I’ve published 32+ papers (10,000+ citations), including work in The Lancet Planetary Health and two first-author papers in iScience (Cell Press). These days I split my attention between academic research and real-world evidence / HEOR."
+  },
+  {
+    "objectID": "about.html#research-interests",
+    "href": "about.html#research-interests",
+    "title": "About",
+    "section": "Research interests",
+    "text": "Research interests\n\nBayesian spatiotemporal modeling (R-INLA, BYM2, CAR)\nCausal inference (Mendelian randomization, propensity scores, IPW, MSM)\nNLP & sentiment analysis on large geotagged datasets\nReal-world evidence & HEOR\nReproducible analysis pipelines"
+  },
+  {
+    "objectID": "about.html#tools",
+    "href": "about.html#tools",
+    "title": "About",
+    "section": "Tools",
+    "text": "Tools\nR · Python · R-INLA · high-performance computing · reproducible workflows (renv / uv, Quarto, Make)"
+  },
+  {
+    "objectID": "archive.html",
+    "href": "archive.html",
+    "title": "Archive",
+    "section": "",
+    "text": "All posts, newest first.\n\n\n\n\n\n\n   \n    \n    \n      Order By\n      Default\n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Title\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\n\nTitle\n\n\n\nCategories\n\n\n\n\n\n\n\n\nJun 10, 2026\n\n\nA reproducible analysis template I actually use\n\n\nR, Python, Workflow\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Tareq Al-Ahdal",
+    "section": "",
+    "text": "Heidelberg · Germany\n\n\n\nEpidemiologist & Data Scientist\n\n\nI work at the intersection of spatial epidemiology, Bayesian modeling, and health data science — building reproducible analyses that turn large, messy population and environmental data into evidence people can act on. My methods span R-INLA spatiotemporal models, Mendelian randomization, and NLP on geotagged data.\n\n\nPublications View GitHub"
+  },
+  {
+    "objectID": "index.html#selected-publications",
+    "href": "index.html#selected-publications",
+    "title": "Tareq Al-Ahdal",
+    "section": "Selected Publications",
+    "text": "Selected Publications\n All publications →"
+  },
+  {
+    "objectID": "index.html#featured-project",
+    "href": "index.html#featured-project",
+    "title": "Tareq Al-Ahdal",
+    "section": "Featured Project",
+    "text": "Featured Project\n All projects →"
+  },
+  {
+    "objectID": "index.html#recent-posts",
+    "href": "index.html#recent-posts",
+    "title": "Tareq Al-Ahdal",
+    "section": "Recent Posts",
+    "text": "Recent Posts\n All posts →"
+  },
+  {
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "Projects",
+    "section": "",
+    "text": "Code and reproducible pipelines. More on GitHub.\n\n\n\nGermany & Europe Climate–Sentiment\n\n\nReproducible R + Python pipeline for the STAR Protocols paper: tweet preprocessing, LIWC22 sentiment analysis, climate-variable extraction to NUTS regions, and spatiotemporal INLA (BYM/BYM2, fused-lasso temporal effects). Backs both iScience papers on Germany and Europe.\n\n\nR 82% Jupyter 11% Python 7%\n\n\n\n\nMore on GitHub →\n\n\nBrowse the rest of my repositories — analysis code, reproducible workflows, and teaching material in R and Python.\n\n\nR Python"
+  }
+]

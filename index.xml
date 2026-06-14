@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>Tareq Al-Ahdal</title>
+<link>https://alahdalta1.github.io/</link>
+<atom:link href="https://alahdalta1.github.io/index.xml" rel="self" type="application/rss+xml"/>
+<description>Epidemiologist &amp; Data Scientist — notes and tutorials on spatial epidemiology, Bayesian modeling, and health data science in R and Python.</description>
+<generator>quarto-1.9.38</generator>
+<lastBuildDate>Sat, 13 Jun 2026 22:00:00 GMT</lastBuildDate>
+<item>
+  <title>Fitting a BYM2 model in R-INLA, start to finish</title>
+  <dc:creator>Tareq Al-Ahdal</dc:creator>
+  <link>https://alahdalta1.github.io/posts/bym2-inla/</link>
+  <description><![CDATA[ 
+
+
+
+
+<section id="why-bym2" class="level2">
+<h2 class="anchored" data-anchor-id="why-bym2">Why BYM2</h2>
+<p>When you model disease counts across regions, neighbouring areas tend to look alike. The Besag–York–Mollié (BYM) model captures this by splitting the area-level random effect into two parts: a <strong>spatially structured</strong> component (areas borrow strength from their neighbours) and an <strong>unstructured</strong> component (independent area noise).</p>
+<p>The classic BYM has a practical problem — the two variances are not separately identifiable, so priors are hard to set. The <strong>BYM2</strong> reparameterization fixes this with a single precision and a mixing parameter <img src="https://latex.codecogs.com/png.latex?%5Cphi%20%5Cin%20%5B0,1%5D"> that says <em>how much</em> of the variance is spatial.</p>
+</section>
+<section id="a-minimal-fit" class="level2">
+<h2 class="anchored" data-anchor-id="a-minimal-fit">A minimal fit</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">library</span>(INLA)</span>
+<span id="cb1-2"></span>
+<span id="cb1-3"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># adjacency graph built from your shapefile -&gt; "map.graph"</span></span>
+<span id="cb1-4">formula <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> cases <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">~</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span> <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb1-5">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">f</span>(area_id,</span>
+<span id="cb1-6">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">model =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"bym2"</span>,</span>
+<span id="cb1-7">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">graph =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"map.graph"</span>,</span>
+<span id="cb1-8">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">scale.model =</span> <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">TRUE</span>,</span>
+<span id="cb1-9">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">hyper =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">list</span>(</span>
+<span id="cb1-10">      <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">phi  =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">list</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">prior =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"pc"</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">param =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.5</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.5</span>)),</span>
+<span id="cb1-11">      <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">prec =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">list</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">prior =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"pc.prec"</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">param =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.01</span>))</span>
+<span id="cb1-12">    ))</span>
+<span id="cb1-13"></span>
+<span id="cb1-14">fit <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">inla</span>(</span>
+<span id="cb1-15">  formula,</span>
+<span id="cb1-16">  <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">family          =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"poisson"</span>,</span>
+<span id="cb1-17">  <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">data            =</span> dat,</span>
+<span id="cb1-18">  <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">E               =</span> expected,           <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># offset: expected counts</span></span>
+<span id="cb1-19">  <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">control.predictor =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">list</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">compute =</span> <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">TRUE</span>)</span>
+<span id="cb1-20">)</span>
+<span id="cb1-21"></span>
+<span id="cb1-22"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">summary</span>(fit)</span></code></pre></div></div>
+</div>
+</section>
+<section id="reading-the-mixing-parameter" class="level2">
+<h2 class="anchored" data-anchor-id="reading-the-mixing-parameter">Reading the mixing parameter</h2>
+<p>The number you care about most is the posterior of <img src="https://latex.codecogs.com/png.latex?%5Cphi">. Close to 1 means the variation is mostly spatial (strong neighbourhood structure); close to 0 means it’s mostly independent noise.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1">fit<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span>summary.hyperpar[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Phi for area_id"</span>, <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"mean"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"0.025quant"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"0.975quant"</span>)]</span></code></pre></div></div>
+</div>
+</section>
+<section id="takeaways" class="level2">
+<h2 class="anchored" data-anchor-id="takeaways">Takeaways</h2>
+<ul>
+<li>Use <code>scale.model = TRUE</code> so the PC priors mean the same thing across maps.</li>
+<li>Report the posterior of <img src="https://latex.codecogs.com/png.latex?%5Cphi"> — it’s the headline of a BYM2 fit.</li>
+<li>The offset (<code>E</code>) is expected counts, not population; get that right first.</li>
+</ul>
+<p><em>This is an example post showing how code, math, and prose render. Replace it with your own tutorials.</em></p>
+
+
+</section>
+
+ ]]></description>
+  <category>R</category>
+  <category>Spatial</category>
+  <category>Bayesian</category>
+  <guid>https://alahdalta1.github.io/posts/bym2-inla/</guid>
+  <pubDate>Sat, 13 Jun 2026 22:00:00 GMT</pubDate>
+  <media:content url="https://alahdalta1.github.io/posts/bym2-inla" medium="image"/>
+</item>
+<item>
+  <title>A reproducible analysis template I actually use</title>
+  <dc:creator>Tareq Al-Ahdal</dc:creator>
+  <link>https://alahdalta1.github.io/posts/welcome/</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>Most analysis projects rot because nobody can re-run them six months later. Here’s the skeleton I start every project with so that <code>make all</code> reproduces everything from raw data to the figures in the paper.</p>
+<section id="the-layout" class="level2">
+<h2 class="anchored" data-anchor-id="the-layout">The layout</h2>
+<pre><code>project/
+├── data/
+│   ├── raw/          # never edited by hand
+│   └── derived/      # everything here is regenerated
+├── R/                # functions, sourced not run top-to-bottom
+├── analysis/         # numbered scripts: 01_clean.R, 02_model.R ...
+├── figures/
+├── renv.lock         # pinned R dependencies
+├── Makefile
+└── README.md</code></pre>
+</section>
+<section id="the-rule-that-makes-it-work" class="level2">
+<h2 class="anchored" data-anchor-id="the-rule-that-makes-it-work">The rule that makes it work</h2>
+<p>Raw data is read-only. Everything in <code>data/derived/</code> is produced by a script and can be deleted and rebuilt at any time. If you can’t delete it and get it back, it doesn’t belong there.</p>
+</section>
+<section id="a-tiny-makefile" class="level2">
+<h2 class="anchored" data-anchor-id="a-tiny-makefile">A tiny Makefile</h2>
+<p>```makefileall: figures/fig1.png</p>
+<p>data/derived/clean.rds: analysis/01_clean.R data/raw/source.csv Rscript $&lt;</p>
+<p>figures/fig1.png: analysis/02_model.R data/derived/clean.rds Rscript $&lt; ```</p>
+<p>Make only re-runs what changed. Touch the cleaning script and just the downstream steps rebuild.</p>
+<p><em>Example post — swap for your own content.</em></p>
+
+
+</section>
+
+ ]]></description>
+  <category>R</category>
+  <category>Python</category>
+  <category>Workflow</category>
+  <guid>https://alahdalta1.github.io/posts/welcome/</guid>
+  <pubDate>Tue, 09 Jun 2026 22:00:00 GMT</pubDate>
+</item>
+</channel>
+</rss>
