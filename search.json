@@ -4,21 +4,21 @@
     "href": "publications.html",
     "title": "Publications",
     "section": "",
-    "text": "iScience\n\n\n\niScience (Cell Press) · 2025 · 28(12)\n\n\nR-INLA / BYM2 NLP Spatiotemporal 462M tweets\n\n\n\n\niScience\n\n\n\niScience (Cell Press) · 2025 · 28(3)\n\n\nR-INLA Sentiment analysis Germany\n\n\n\n\nProtocol\n\n\n\nSTAR Protocols · 2026\n\n\nReproducible workflow R + Python"
+    "text": "ACER\n\n\n\nAlcohol: Clinical and Experimental Research · 2026\n\n\nOropharyngeal cancer Alcohol Socioeconomic determinants\n\n\n\n\niScience\n\n\n\niScience (Cell Press) · 2025\n\n\nR-INLA / BYM2 NLP Spatiotemporal 462M tweets\n\n\n\n\niScience\n\n\n\niScience (Cell Press) · 2025\n\n\nR-INLA Sentiment analysis Germany\n\n\n\n\nCell Press\n\n\n\nSTAR Protocols (Cell Press) · 2026\n\n\nReproducible workflow R + Python Spatiotemporal"
   },
   {
     "objectID": "publications.html#first-author",
     "href": "publications.html#first-author",
     "title": "Publications",
     "section": "",
-    "text": "iScience\n\n\n\niScience (Cell Press) · 2025 · 28(12)\n\n\nR-INLA / BYM2 NLP Spatiotemporal 462M tweets\n\n\n\n\niScience\n\n\n\niScience (Cell Press) · 2025 · 28(3)\n\n\nR-INLA Sentiment analysis Germany\n\n\n\n\nProtocol\n\n\n\nSTAR Protocols · 2026\n\n\nReproducible workflow R + Python"
+    "text": "ACER\n\n\n\nAlcohol: Clinical and Experimental Research · 2026\n\n\nOropharyngeal cancer Alcohol Socioeconomic determinants\n\n\n\n\niScience\n\n\n\niScience (Cell Press) · 2025\n\n\nR-INLA / BYM2 NLP Spatiotemporal 462M tweets\n\n\n\n\niScience\n\n\n\niScience (Cell Press) · 2025\n\n\nR-INLA Sentiment analysis Germany\n\n\n\n\nCell Press\n\n\n\nSTAR Protocols (Cell Press) · 2026\n\n\nReproducible workflow R + Python Spatiotemporal"
   },
   {
-    "objectID": "publications.html#co-authored",
-    "href": "publications.html#co-authored",
+    "objectID": "publications.html#selected-co-authored",
+    "href": "publications.html#selected-co-authored",
     "title": "Publications",
-    "section": "Co-authored",
-    "text": "Co-authored\n\nLancet\n\nClimate change and pandemics: a call for action\n\nThe Lancet Planetary Health · 2025\n\n\nClimate–health\n\n\n\n\nLancet\n\nCOVID-19 in Afghanistan — epidemiology and early response\n\nThe Lancet Global Health / Lancet Infectious Diseases\n\n\nInfectious disease Surveillance"
+    "section": "Selected co-authored",
+    "text": "Selected co-authored\n\nLancet\n\nClimate change and pandemics: a call for action\n\nThe Lancet Planetary Health · 2025\n\n\nClimate–health Pandemics\n\n\n\n\nLancet\n\nThe first COVID-19 case in Afghanistan acquired from Iran\n\nThe Lancet Infectious Diseases · 2020\n\n\nCOVID-19 Surveillance\n\n\n\n\nBMC\n\nEffectiveness of early warning systems in the detection of infectious disease outbreaks: a systematic review\n\nBMC Public Health · 2022\n\n\nOutbreak detection Systematic review\n\n\n\n\nLancet\n\nGlobal burden of diabetes from 1990 to 2021, with projections to 2050\n\nThe Lancet · 2023\n\n\nDiabetes Global burden\n\n\n\n\nJ Electrocardiol\n\nPredicting atrial fibrillation after cardiac surgery using a simplified risk index\n\nJournal of Electrocardiology · 2021\n\n\nAtrial fibrillation Cardiac surgery"
   },
   {
     "objectID": "posts/welcome/index.html",
@@ -60,7 +60,7 @@
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "I’m a doctoral researcher in Heidelberg working on climate–health epidemiology and spatial statistics. My methods sit mostly in Bayesian spatiotemporal modeling — R-INLA, BYM2, CAR priors — alongside causal inference (Mendelian randomization) and NLP on geotagged data.\nBefore this I trained as a dentist and earned master’s degrees in public health/epidemiology and in health informatics. I’ve published 32+ papers (10,000+ citations), including work in The Lancet Planetary Health and two first-author papers in iScience (Cell Press). These days I split my attention between academic research and real-world evidence / HEOR."
+    "text": "I’m a doctoral researcher in Heidelberg working on climate–health epidemiology and spatial statistics. My methods sit mostly in Bayesian spatiotemporal modeling — R-INLA, BYM2, CAR priors — alongside causal inference (Mendelian randomization) and NLP on geotagged data.\nBefore this I trained as a dentist and earned master’s degrees in public health/epidemiology and in health informatics. I’ve published 34 PubMed-indexed publications, including 6 as first author, with first-author papers in iScience and co-authorship across The Lancet family. These days I split my attention between academic research and real-world evidence / HEOR."
   },
   {
     "objectID": "about.html#research-interests",
@@ -77,6 +77,13 @@
     "text": "Tools\nR · Python · R-INLA · high-performance computing · reproducible workflows (renv / uv, Quarto, Make)"
   },
   {
+    "objectID": "about.html#contact",
+    "href": "about.html#contact",
+    "title": "About",
+    "section": "Contact",
+    "text": "Contact\nBased in Heidelberg, Germany. Reach me at tareq.al-ahdal@uni-heidelberg.de."
+  },
+  {
     "objectID": "archive.html",
     "href": "archive.html",
     "title": "Archive",
@@ -88,7 +95,7 @@
     "href": "index.html",
     "title": "Tareq Al-Ahdal",
     "section": "",
-    "text": "Heidelberg · Germany\n\n\n\nEpidemiologist & Data Scientist\n\n\nI work at the intersection of spatial epidemiology, Bayesian modeling, and health data science — building reproducible analyses that turn large, messy population and environmental data into evidence people can act on. My methods span R-INLA spatiotemporal models, Mendelian randomization, and NLP on geotagged data.\n\n\nPublications View GitHub"
+    "text": "Heidelberg · Germany\n\n\n\nEpidemiologist & Data Scientist\n\n\nI’m an epidemiologist and health data scientist at Heidelberg University Hospital, working on causal inference from observational data and Bayesian spatiotemporal modeling. My doctoral work built and operated an end-to-end NLP pipeline over 462 million geotagged records across eleven European countries, modeling population negative sentiment against environmental stressors in R-INLA. I also work in Mendelian randomization — separating causal effects from socioeconomic confounding. Dissertation submitted to the Faculty of Medicine, Heidelberg University; defense expected autumn 2026.\n\n\nPublications View GitHub ORCID"
   },
   {
     "objectID": "index.html#selected-publications",
